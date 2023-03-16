@@ -5,6 +5,6 @@
   "description": "A pure zen mode for Obsidian",
   "author": "Johan Friis",
   "authorUrl": "https://github.com/johanfriis/obsidian-zen-mode",
-  "isDesktopOnly": false,
-  "version": "0.0.0"
+  "isDesktopOnly": true,
+  "version": "1.0.0"
 }

@@ -1,6 +1,6 @@
 {
   "name": "obsidian-zen-mode",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A pure zen mode for Obsidian",
   "main": "main.js",
   "scripts": {
