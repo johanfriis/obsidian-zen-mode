@@ -1,1 +1,1 @@
-# Obsidian Plugin Starter
+# Zen Mode

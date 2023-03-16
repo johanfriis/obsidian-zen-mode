@@ -1,15 +1,15 @@
 import { App, PluginSettingTab, Setting } from "obsidian";
-import ObsidianPluginStarter from "../main";
+import Zen from "../main";
 import { Settings } from "./Settings.types";
 
 export const DEFAULT_SETTINGS: Settings = {
   someField: "",
 };
 
-export class ObsidianPluginStarterTab extends PluginSettingTab {
-  plugin: ObsidianPluginStarter;
+export class ZenModeSettings extends PluginSettingTab {
+  plugin: Zen;
 
-  constructor(app: App, plugin: ObsidianPluginStarter) {
+  constructor(app: App, plugin: Zen) {
     super(app, plugin);
     this.plugin = plugin;
   }
@@ -25,11 +25,11 @@ export class ObsidianPluginStarterTab extends PluginSettingTab {
 
   addHeading(): void {
     this.containerEl.createEl("h2", {
-      text: "Obsidian Plugin Starter Settings",
+      text: "Zen Settings",
     });
   }
 
-  addSomeElement(): void {
+  addSomeField(): void {
     new Setting(this.containerEl)
       .setName("Some Field")
       .setDesc("A field that does something useful")

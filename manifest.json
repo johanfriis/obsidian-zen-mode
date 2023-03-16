@@ -1,10 +1,10 @@
 {
-  "id": "obsidian-plugin-starter",
-  "name": "Obsidian Plugin Starter",
+  "id": "obsidian-zen-mode",
+  "name": "Zen Mode",
   "minAppVersion": "1.0.0",
-  "description": "An easy way to get started with obsidian plugins",
+  "description": "A pure zen mode for Obsidian",
   "author": "Johan Friis",
-  "authorUrl": "https://github.com/johanfriis",
+  "authorUrl": "https://github.com/johanfriis/obsidian-zen-mode",
   "isDesktopOnly": false,
   "version": "0.0.0"
 }

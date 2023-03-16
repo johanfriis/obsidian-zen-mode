@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-plugin-starter",
+  "name": "obsidian-zen-mode",
   "version": "0.0.0",
-  "description": "Obsidian Plugin Starter",
+  "description": "A pure zen mode for Obsidian",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
