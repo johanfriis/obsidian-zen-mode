@@ -1,5 +1,9 @@
-/*
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
-If your plugin does not need CSS, delete this file.
-*/
+body.zen-mode .side-dock-ribbon,
+body.zen-mode .mod-left-split,
+body.zen-mode .mod-root .workspace-tab-header-container-inner,
+body.zen-mode .mod-root .workspace-tab-header-new-tab,
+body.zen-mode .mod-root .workspace-tab-header-tab-list,
+body.zen-mode .mod-root .sidebar-toggle-button,
+body.zen-mode .status-bar {
+  display: none;
+}

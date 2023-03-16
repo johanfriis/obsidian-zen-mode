@@ -1,35 +1,10 @@
 import { Plugin } from "obsidian";
-import { ZenModeSettings, DEFAULT_SETTINGS, Settings } from "./settings";
-
-/**
- * Classes that can be hidden
- *
- * - workspace-ribbon side-dock-ribbon mod-left
- * - workspace-split mod-horizontal mod-left-split
- * - workspace-tab-header-container
- * - status-bar
- *
- *
- */
 
 export default class ZenMode extends Plugin {
-  settings: Settings;
-
   enabled: boolean = false;
-
-  uiClasses = [
-    ".workspace-ribbon.side-dock-ribbon.mod-left",
-    ".workspace-split.mod-horizontal.mod-left-split",
-    ".workspace-tab-header-container",
-    ".status-bar",
-  ];
+  zenModeClass = "zen-mode";
 
   async onload() {
-    console.log("Loading Zen Mode ...");
-
-    await this.loadSettings();
-    this.addSettingTab(new ZenModeSettings(this.app, this));
-
     this.addCommand({
       id: "toggle-zen-mode",
       name: "Toggle Zen Mode",
@@ -37,29 +12,13 @@ export default class ZenMode extends Plugin {
         this.toggleZenMode();
       },
     });
-
-    this.startPlugin();
-
-    console.log("Zen Mode running ...");
   }
 
   async onunload() {
-    console.log("Zen Mode running ...");
-  }
-
-  startPlugin() {
-    console.log("Zen Mode is starting");
-    console.log();
-
-    /**
-     * Here we can actually start manipulating the view
-     */
-    this.app.workspace.onLayoutReady(async () => {});
+    this.unzenify();
   }
 
   toggleZenMode() {
-    console.log({ enabled: this.enabled });
-
     if (this.enabled) {
       this.unzenify();
     } else {
@@ -69,34 +28,11 @@ export default class ZenMode extends Plugin {
 
   zenify() {
     this.enabled = true;
-    console.log("zenify");
-    this.toggleVisibleElements(false);
+    document.body.classList.add(this.zenModeClass);
   }
 
   unzenify() {
     this.enabled = false;
-    console.log("unzenify");
-    this.toggleVisibleElements(true);
-  }
-
-  toggleVisibleElements(visible: boolean) {
-    const parentEl = this.app.dom.appContainerEl;
-    this.uiClasses.forEach((cls) => {
-      const el = parentEl.querySelector(cls);
-      if (visible) {
-        el.style.display = "inherit";
-      } else {
-        el.style.display = "none";
-      }
-    });
-  }
-
-  async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-  }
-
-  async saveSettings() {
-    await this.saveData(this.settings);
-    this.startPlugin();
+    document.body.classList.remove(this.zenModeClass);
   }
 }
